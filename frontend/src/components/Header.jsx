@@ -3,7 +3,7 @@ import React from 'react';
 
 import {Navbar, Nav, Container} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
-import { useNavigate } from 'react-router-dom';
+
 
 import {FaShoppingCart} from 'react-icons/fa';
 import centennial from '../assets/centennial.png'
@@ -11,10 +11,7 @@ import centennial from '../assets/centennial.png'
 
 
 const Header = () => {
-    // const navigate = useNavigate();
-    // const handleSignIn = () => {
-    //     navigate('/login');  // Navigate to the login page manually
-    // };
+   
   return (
     <header>
         <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>

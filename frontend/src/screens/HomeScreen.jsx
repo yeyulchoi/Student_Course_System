@@ -1,17 +1,30 @@
-import { Row, Col} from 'react-bootstrap';
-import courses from '../courses';
+import React from 'react'
+import {useEffect, useState} from 'react';
+import axios from 'axios';
+import { Row, Col, Form} from 'react-bootstrap';
 import Course from '../components/Course';
 
 
-import React from 'react'
-
 const HomeScreen = () => {
+  const [courses, setCourses] = useState([]);
+  useEffect(()=>{
+    const fetchCourses = async()=>{
+      const {data}=await axios.get('/api/courses');  //deconstruction?!
+      setCourses(data);
+    }
+    fetchCourses();
+
+  },[]);  
+  //[] is an array of dependencies / put sth in there, the value changes, this use effect is gonna to run okay but we only  want it to run once when the page loads.
+  // so  we gonna leave this as an empty array
+//use effect: I wanna use async await
+
   return (
    <>
    <h1>Latest courses</h1>
    <Row>
     {courses.map((course)=>(
-        <Col key={course.code} sm={12} md={6} lg={4} xl={3}>        
+        <Col key={course._id} sm={12} md={6} lg={4} xl={3}>        
         <Course course={course}/>
         </Col>
     ))    

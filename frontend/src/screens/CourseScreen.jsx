@@ -1,16 +1,30 @@
+import {useState, useEffect, } from 'react'
+
 import React from 'react'
-import { useParams } from 'react-router-dom'
-import courses from '../courses'
+import { useParams } from 'react-router-dom';
+import axios from 'axios'
 import { Link } from 'react-router-dom'
 import {Form,Row, Col, Image, ListGroup, Card, Button, ListGroupItem} from 'react-bootstrap'
 
 
 
 const CourseScreen = () => {
+    const [course, setCourse] =useState({});
+
+
+
     // destructure , :courseCode is rename 
     const {id:courseId} =useParams();   
         //fetch course
-    const course = courses.find((course)=>course._id===courseId)
+    // const course = courses.find((course)=>course._id===courseId)
+
+    useEffect(()=>{
+        const fetchCourse = async()=>{
+            const {data} = await axios.get(`/api/courses/${courseId}`)
+            setCourse(data);
+        }
+        fetchCourse();
+    },[courseId])
    
 
   return (
