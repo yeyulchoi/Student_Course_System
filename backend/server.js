@@ -2,11 +2,12 @@ import express from 'express';
 import dotenv from 'dotenv';
 dotenv.config();
 import courses from './data/courses.js'    // since using ES module on the backend, have to use .js
+import connectDB from './config/db.js'
 
 const port=process.env.PORT ||5000;
 const app=express();
 
-
+connectDB();
 app.get('/',(req, res) =>{
     res.send("API is running...")
 })
