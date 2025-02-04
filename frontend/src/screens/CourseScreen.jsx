@@ -1,8 +1,7 @@
 import {useState, useEffect, } from 'react'
-
 import React from 'react'
 import { useParams } from 'react-router-dom';
-import axios from 'axios'
+import axios from 'axios';
 import { Link } from 'react-router-dom'
 import {Form,Row, Col, Image, ListGroup, Card, Button, ListGroupItem} from 'react-bootstrap'
 
@@ -12,12 +11,9 @@ const CourseScreen = () => {
     const [course, setCourse] =useState({});
 
 
-
     // destructure , :courseCode is rename 
     const {id:courseId} =useParams();   
-        //fetch course
-    // const course = courses.find((course)=>course._id===courseId)
-
+      
     useEffect(()=>{
         const fetchCourse = async()=>{
             const {data} = await axios.get(`/api/courses/${courseId}`)
@@ -37,18 +33,23 @@ const CourseScreen = () => {
         <Col md={7}>
             <ListGroup variant='flush'>
             <ListGroup.Item>
-                <h3>{course.name}</h3>
+                <h6>Course Name</h6>
+                <h3>{course.course_name}</h3>
             </ListGroup.Item> 
             <ListGroup.Item>
-                <h3>{course.code}</h3>
-            </ListGroup.Item> 
+                <h6>Course code</h6>
+                <h3>{course.course_code}</h3>
+            </ListGroup.Item>                
             <ListGroup.Item>
+                <h6>Section</h6>
                 <h3>{course.section}</h3>
             </ListGroup.Item> 
             <ListGroup.Item>
+                <h6>Semester</h6>
                 <h3>{course.semester}</h3>
             </ListGroup.Item> 
             <ListGroup.Item>
+                <h6>Description</h6>
                 <h3>{course.description}</h3>
             </ListGroup.Item> 
             </ListGroup>

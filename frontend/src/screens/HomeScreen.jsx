@@ -9,9 +9,12 @@ const HomeScreen = () => {
   const [courses, setCourses] = useState([]);
   useEffect(()=>{
     const fetchCourses = async()=>{
-      const {data}=await axios.get('/api/courses');  //deconstruction?!
-      setCourses(data);
-    }
+      try {
+        const { data } = await axios.get('/api/courses');
+        setCourses(data);
+      } catch (error) {
+        console.error("Error fetching courses:", error);
+      }}
     fetchCourses();
 
   },[]);  

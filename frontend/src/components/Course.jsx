@@ -12,12 +12,12 @@ const Course = ({course}) => {
     <Card.Body>
       <Link to={`/course/${course._id}`}>           
         <Card.Title as="div">
-          <strong>{course.name}</strong>
+          <h3><strong>{course.course_name}</strong></h3>
         </Card.Title>
       </Link>
       
       <Card.Text as="h3">
-        ${course.code}
+        {course.course_code}
       </Card.Text>
     </Card.Body>
    </Card>

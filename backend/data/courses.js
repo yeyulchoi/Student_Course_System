@@ -33,7 +33,6 @@ const courses = [
       'Building on fundamentals of Object-Oriented programming, this course exposes the students to algorithms and data structures. Students will analyze, evaluate and apply appropriate data structures & algorithms for the implementation of a software system. Coursework emphasizes the classical data structures, basic algorithm design, common operations on data structures, and the use of mathematical techniques to analyze the efficiency of the various algorithms. The languages of instruction are Java and Python (optional).',
   },
   {
-   
     course_code:'COMP-304',
     course_name:'Mobile Apps Development',
     image:'/images/comp304.png',
@@ -43,7 +42,7 @@ const courses = [
       'In this mobile apps course, students will gain hands-on experience in developing and deploying mobile applications on the Android platform. Coursework emphasizes how to create advanced Graphical User Interfaces (GUIs), handle events, access remote services, store and retrieve data on the device, display maps, and use other Android APIs. Android Studio will be used to create a variety of mobile applications.',
   },
   {
-   
+    
     course_code: 'COMP-311',
     course_name:'Software Testing and Quality Assurance',
     image:'/images/comp311.png',
@@ -63,7 +62,7 @@ const courses = [
       'This course builds on Java Programming, COMP228, and covers the most popular enterprise application development frameworks in the Java Ecosystem. Coursework emphasizes building modern Java-based enterprise applications. Students will gain hands-on experience by using Spring core, Spring MVC, Spring Data, Spring Security, Spring Boot, and microservices.',
   },
   {
-   
+    
     course_code:'COMP-308',
     course_name:'Emerging Technologies',
     image:'/images/comp308.png',

@@ -19,7 +19,7 @@ const Header = () => {
                 <LinkContainer to='/'>
                     <Navbar.Brand>
                     <img src={centennial} alt="Centennial" /> 
-                        Student&Course System
+                        <strong>Student & Course System</strong>
                     </Navbar.Brand>
                 </LinkContainer>                   
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
